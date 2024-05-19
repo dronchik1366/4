@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define str_size 100 // Declare the maximum size of the string
+
+int main() {
+    char str[str_size]; // Declare a character array
+    int i, word_count = 0; // Initialize word_count to 0
+
+    printf("Input the string: ");
+    fgets(str, str_size, stdin); // Read the string from the user
+
+    // Iterate through each character in the string
+    for (i = 0; i < str_size; i++) {
+        // If the character is a whitespace, increment the word count
+        if (str[i] == ' ') {
+            word_count++;
+        }
+    }
+
+    // Increment the word count by 1 to account for the last word
+    word_count++;
+
+    printf("Total number of words in the string is: %d\n", word_count);
+
+    return 0;
+}
